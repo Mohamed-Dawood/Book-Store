@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="../main-page/imgs/logo/Logo.png" />
+    <title>Product Page</title>
+  </head>
+
+  <body>
+    <button id="scrollTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- *************** Start Wish List *************** -->
+
+    <div id="wishList">
+      <header class="p-2 bg-body-tertiary">
+        <h1>wishlist</h1>
+        <div class="buttons">
+          <button class="btn btn-outline-primary" id="wishListClearAll">
+            Clear All
+          </button>
+          <button class="btn btn-outline-primary" id="closeWishList">
+            Close
+          </button>
+
+        </div>
+      </header>
+      <div class="wishListProduct">
+        <div class="wishlistContainer">
+          <table class="wishListTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- *************** End Wish List *************** -->
+
+    <!-- *************** Start Shopping Cart *************** -->
+
+    <div class="shoppingCartPage">
+      <header class="p-2 bg-body-tertiary">
+        <h1>Shopping Cart</h1>
+        <div class="buttons">
+          <button class="btn btn-outline-primary" id="shoppingCartClearAll">
+            Clear All
+          </button>
+          <button class="btn btn-outline-primary closeShoppingCart">
+            Close
+          </button>
+          <button class="btn btn-outline-primary" id="payment">
+            Payment
+          </button>
+        </div>
+      </header>
+      <div class="shoppingCartProduct">
+        <div class="shoppingCartContainer">
+          <table class="shoppingCartTable">
+            <!-- <tr>
+              <td>
+                <img src="images/book.png" alt="" />
+              </td>
+              <td><h5>title</h5></td>
+              <td><h4>Name of Author</h4></td>
+              <td><p>Price: $34</p></td>
+              <td><p>rating:4</p></td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- *************** End Shopping Cart *************** -->
+
+    <!-- *************** Start Nav *************** -->
+
+    <nav class="p-2 bg-body-tertiary">
+      <div class="container d-flex justify-content-between">
+        <div class="logo d-flex">
+          <img src="../main-page/imgs/logo/Logo.png" alt="" />
+          <p class="m-auto">Bookly</p>
+        </div>
+        <ul class="d-flex align-items-center">
+          <li class="me-1 wishListIcon"><i class="fas fa-heart"></i></li>
+          <li class="shoppingCartIcon"><i class="fas fa-cart-shopping"></i></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- *************** End Nav *************** -->
+
+    <!-- *************** Start Products *************** -->
+    <div class="products m-1">
+      <div class="settings">
+        <section>
+          <input class="form-control me-2 w-50" type="search" placeholder="Search..." />
+          <select class="form-select w-25" "sortOption" id="sortOption" onchange="sortBooks()">
+            <option value="sort by rating" selected>Sort by rating</option>
+            <option value="sort by price low to high">
+              Sort by price low to high
+            </option>
+            <option value="sort by price high to low">
+              Sort by price high to low
+            </option>
+          </select>
+        </section>
+        <ul class="filter">
+          <li data-cat=".all" class="active">all</li>
+          <li data-cat=".classic">Classic</li>
+          <li data-cat=".fiction">Fiction</li>
+          <li data-cat=".dystopian">Dystopian</li>
+          <li data-cat=".fantasy">Fantasy</li>
+          <li data-cat=".thriller">Thriller</li>
+          <li data-cat=".mystery">Mystery</li>
+          <li data-cat=".young adult">Young Adult</li>
+          <li data-cat=".adventure">Adventure</li>
+          <li data-cat=".drama">Drama</li>
+          <li data-cat=".self-help">Self-Help</li>
+        </ul>
+      </div>
+      <div id="container" class="container m-auto text-center row">
+        <!-- <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="product">
+            <div class="img">
+              <img src="images/book.png" alt="" />
+            </div>
+            <div class="info">
+              <h2>Title</h2>
+              <h4>Name of Author</h4>
+              <section>
+                <p>⭐⭐⭐</p>
+                <p>Price: $34</p>
+              </section>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- *************** Start Products *************** -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
